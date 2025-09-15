@@ -6,7 +6,161 @@
   <title>हिंदी सीखें – क से ज्ञ</title>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap" rel="stylesheet">
   <style>
-    body {
+    /* 🎨 Fun, Kid-Friendly Styling */
+body {
+  font-family: 'Comic Neue', 'Baloo Bhai 2', cursive;
+  background: linear-gradient(135deg, #ffecd2, #fcb69f, #a1c4fd, #c2ffd8);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* 🎉 Animated gradient background */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+h1 {
+  font-size: 3rem;
+  color: #ff4b5c;
+  text-shadow: 2px 2px #ffe066;
+  margin-bottom: 15px;
+  animation: bounceTitle 2s infinite;
+}
+
+/* 🕺 Wiggly bounce effect for heading */
+@keyframes bounceTitle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px) rotate(-2deg); }
+}
+
+.card {
+  background: #ffffffcc;
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  text-align: center;
+  padding: 35px;
+  width: 340px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: pop 0.6s ease;
+  border: 4px dashed #ffafcc;
+}
+
+.card:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Existing pop-in animation */
+@keyframes pop {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.letter {
+  font-size: 5.5rem;
+  color: #00bbf9;
+  text-shadow: 3px 3px #f72585;
+  margin-bottom: 15px;
+  animation: wiggle 2s infinite;
+}
+
+/* 🌀 Wiggle animation for big letter */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(-5deg); }
+  75% { transform: rotate(3deg); }
+}
+
+.img-box {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  border-radius: 20px;
+  padding: 10px;
+  background: radial-gradient(circle, #ffe066, #ff9f1c);
+  animation: pulse 3s infinite;
+}
+
+/* 🌟 Gentle pulse around image */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 10px #ffe066; }
+  50% { transform: scale(1.05); box-shadow: 0 0 25px #ff9f1c; }
+}
+
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 15px;
+}
+
+.word {
+  font-size: 2.2rem;
+  color: #06d6a0;
+  font-weight: bold;
+  margin-top: 20px;
+  text-shadow: 1px 1px #118ab2;
+  animation: floatWord 4s ease-in-out infinite;
+}
+
+/* 🎈 Floating effect */
+@keyframes floatWord {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 320px;
+  margin-top: 25px;
+}
+
+.nav-buttons button {
+  background: linear-gradient(135deg, #ff477e, #ff7096);
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.3rem;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ⭐ Interactive sparkle effect */
+.nav-buttons button::after {
+  content: "✨";
+  position: absolute;
+  right: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: right 0.4s ease;
+  opacity: 0;
+}
+
+.nav-buttons button:hover {
+  background: linear-gradient(135deg, #ff9f1c, #ffbf69);
+  transform: scale(1.1);
+}
+
+.nav-buttons button:hover::after {
+  right: 10px;
+  opacity: 1;
+}
+
+    /* body {
       font-family: 'Baloo Bhai 2', cursive;
       background: linear-gradient(135deg, #fef6e4, #f1f8ff);
       display: flex;
@@ -74,7 +228,7 @@
     }
     .nav-buttons button:hover {
       background: #ff4757;
-    }
+    } */
   </style>
 </head>
 <body>
