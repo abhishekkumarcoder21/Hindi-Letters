@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>हिंदी सीखें – क से ज्ञ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Baloo Bhai 2', cursive;
+      background: linear-gradient(135deg, #fef6e4, #f1f8ff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #ff6b6b;
+      margin-bottom: 10px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 25px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 30px;
+      width: 320px;
+      transition: transform 0.4s ease;
+      animation: pop 0.5s ease;
+    }
+    @keyframes pop {
+      from {transform: scale(0.8); opacity:0;}
+      to {transform: scale(1); opacity:1;}
+    }
+    .letter {
+      font-size: 5rem;
+      color: #4ecdc4;
+      margin-bottom: 10px;
+    }
+    .img-box {
+      width: 180px;
+      height: 180px;
+      margin: 0 auto;
+    }
+    .img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 15px;
+    }
+    .word {
+      font-size: 2rem;
+      color: #1a535c;
+      margin-top: 15px;
+    }
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      width: 300px;
+      margin-top: 20px;
+    }
+    .nav-buttons button {
+      background: #ff6b6b;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .nav-buttons button:hover {
+      background: #ff4757;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>हिंदी सीखें – क से ज्ञ</h1>
+
+  <div class="card" id="card">
+    <div class="letter" id="letter">क</div>
+    <div class="img-box">
+      <img id="image" src="images/kabootar.png" alt="कबूतर">
+    </div>
+    <div class="word" id="word">क से कबूतर</div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevCard()">⬅ पिछला</button>
+    <button onclick="nextCard()">अगला ➡</button>
+  </div>
+
+  <script>
+    const data = [
+      {letter:'क', word:'क से कबूतर', img:'images/kabootar.png'},
+      {letter:'ख', word:'ख से खरगोश', img:'images/khargosh.png'},
+      {letter:'ग', word:'ग से गमला', img:'images/gamla.png'},
+      {letter:'घ', word:'घ से घर', img:'images/ghar.png'},
+      {letter:'ङ', word:'ङ से कुछ नहीं', img:'images/kn.png'},
+      {letter:'च', word:'च से चम्मच', img:'images/chammach.png'},
+      {letter:'छ', word:'छ से छतरी', img:'images/chahtree.png'},
+      {letter:'ज', word:'ज से जहाज', img:'images/jahaj.png'},
+      {letter:'झ', word:'झ से झरना', img:'images/jharna.png'},
+      {letter:'ञ', word:'ञ से कुछ नहीं', img:'images/kn.png'},
+      {letter:'ट', word:'ट से टमाटर', img:'images/tamatar.png'},
+      {letter:'ठ', word:'ठ से ठेला', img:'images/thela.png'},
+      {letter:'ड', word:'ड से डमरू', img:'images/damaru.png'},
+      {letter:'ढ', word:'ढ से ढोल', img:'images/dhol.png'},
+      {letter:'ण', word:'ण से कुछ नहीं', img:'images/kn.png'},
+      {letter:'त', word:'त से तरबूज', img:'images/tarbuj.png'},
+      {letter:'थ', word:'थ से थाली', img:'images/thali.png'},
+      {letter:'द', word:'द से दरवाजा', img:'images/darwaza.png'},
+      {letter:'ध', word:'ध से धनुष', img:'images/dhanush.png'},
+      {letter:'न', word:'न से नारियल', img:'images/nariyal.png'},
+      {letter:'प', word:'प से पपीता', img:'images/papita.png'},
+      {letter:'फ', word:'फ से फल', img:'images/phal.png'},
+      {letter:'ब', word:'ब से बकरी', img:'images/bakri.png'},
+      {letter:'भ', word:'भ से भालू', img:'images/bhalu.png'},
+      {letter:'म', word:'म से मछली', img:'images/machhli.png'},
+      {letter:'य', word:'य से यज्ञ', img:'images/yagya.png'},
+      {letter:'र', word:'र से रस्सी', img:'images/rassi.png'},
+      {letter:'ल', word:'ल से लड्डू', img:'images/laddoo.png'},
+      {letter:'व', word:'व से वन', img:'images/van.png'},
+      {letter:'श', word:'श से शेर', img:'images/sher.png'},
+      {letter:'ष', word:'ष से षट्कोण', img:'images/shatkon.png'},
+      {letter:'स', word:'स से सांप', img:'images/saanp.png'},
+      {letter:'ह', word:'ह से हाथी', img:'images/haathi.png'},
+      {letter:'क्ष', word:'क्ष से क्षीर', img:'images/kshir.png'},
+      {letter:'त्र', word:'त्र से त्रिशूल', img:'images/trishul.png'},
+      {letter:'ज्ञ', word:'ज्ञ से ज्ञानी', img:'images/gyani.png'}
+    ];
+
+    let currentIndex = 0;
+
+    function showCard(index) {
+      const cardData = data[index];
+      document.getElementById('letter').textContent = cardData.letter;
+      document.getElementById('word').textContent = cardData.word;
+      document.getElementById('image').src = cardData.img;
+      document.getElementById('image').alt = cardData.word;
+    }
+
+    function nextCard() {
+      currentIndex = (currentIndex + 1) % data.length;
+      showCard(currentIndex);
+    }
+
+    function prevCard() {
+      currentIndex = (currentIndex - 1 + data.length) % data.length;
+      showCard(currentIndex);
+    }
+
+    // initial load
+    showCard(currentIndex);
+  </script>
+
+</body>
+</html>
